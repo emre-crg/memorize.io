@@ -1,7 +1,12 @@
 import React from 'react'
 
+import Button from '../components/button'
+
 function HomePage() {
-  return <div>Welcome to Next.js!</div>
+  return (
+    <Button>Deneme</Button>
+
+  )
 }
 
 export default HomePage
