@@ -1,10 +1,12 @@
 import React from 'react'
 
-import Button from '../components/button'
+import Layout from '../components/layout'
 
 function HomePage() {
   return (
-    <Button>Deneme</Button>
+    <Layout>
+      
+    </Layout>
 
   )
 }
