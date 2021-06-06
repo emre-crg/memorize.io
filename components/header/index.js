@@ -3,13 +3,15 @@ import cn from 'classnames'
 
 import styles from './style.module.scss'
 
+import Logo from '../logo/index'
+
 function Header({ children }) {
 
   return (
     <div className={cn(styles.header)}>
-      <div>Logo</div>
+      <Logo />
       <div>Giriş sayfası</div>
-      <div>Dosyalarınız</div>
+      <div>deneme</div>
       <div>Oluştur</div>
       <div>Search</div>
       <div>Çan</div>

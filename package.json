@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "icon": "svgr icons -d components/icons --icon --replace-attr-values \"#fff=currentColor\" "
+    "icon": "svgr icons -d components/icons --icon --replace-attr-values \"#fff=currentColor\""
   },
   "keywords": [],
   "author": "",
@@ -21,6 +21,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@svgr/cli": "^5.5.0",
+    "babel-loader": "^8.2.2",
     "prettier": "^2.2.1",
     "sass": "^1.32.5"
   }
