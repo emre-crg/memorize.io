@@ -1,0 +1,38 @@
+.btnDropDown {
+  // display: flex;
+  // align-items: center;
+  background-color: initial;
+  font: inherit;
+  cursor: pointer;
+  padding: 10px 12px;
+  font-weight: 600;
+  font-size: .875rem;
+  color:#cedaf3;
+
+  :hover {
+    color: white;
+  }
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    svg {
+      padding-left: 8px;
+      font-size: 1rem;
+    }
+  }
+}
+
+.colored {
+  background-color: #7dd;
+  border-radius: 5px;
+  color: #4257b2;
+
+  :hover {
+    color: inherit;
+  }
+}
+.colored:hover {
+  background-color: rgb(158, 226, 226);
+}
