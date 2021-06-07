@@ -1,0 +1,26 @@
+.searchBar {
+  // color: #cedaf3;
+  color: white;
+  background-color: hsl(0deg 0% 100% / 10%);
+  border-radius: 5px;
+
+  input {
+    background: transparent;
+    margin: 4px 6px;
+    color: white;
+  }
+
+  input::placeholder {
+    color: white;
+  }
+
+  svg {
+    padding-left: 4px;
+    font-size: 1rem;
+  }
+
+  :focus {
+    background-color: white ;
+    color: #646f90;
+  }
+}

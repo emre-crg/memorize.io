@@ -1,11 +1,12 @@
 import React from 'react'
+import SearchBar from '../../search-bar'
 
 import styles from './style.module.scss'
 
 function ContentRight({children}) {
   return (
     <div className={styles.contentRight}>
-      <div>Search</div>
+      <SearchBar>Ara</SearchBar>
       <div>Çan</div>
       <div>Avatar</div>
     </div>
