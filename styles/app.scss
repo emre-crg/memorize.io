@@ -8,12 +8,9 @@
   font: inherit;
 }
 
-html {
-  font-size: 15px;
-}
-
-body {
-  font-size: 1rem;
+html ,body {
+  font-size: 100%;
+  line-height: 1.625;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   background-color: $color-app-background;
