@@ -3,7 +3,6 @@ import cn from 'classnames'
 
 import styles from './style.module.scss'
 
-import Logo from '../logo/index'
 import ContentLeft from './content-left'
 import ContentRight from './content-right'
 

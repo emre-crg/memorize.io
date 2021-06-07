@@ -1,0 +1,25 @@
+.cardDefauld {
+  width: 300px;
+  height: 140px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 24px;
+  text-align: center;
+  border: 1px solid #cedaf3;
+
+  h1, h2, h3 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  span {
+    color: cornflowerblue;
+    font-size: 14px;
+  }
+}
+
+.cardDefauld:hover {
+  border-bottom: 4px solid #cedaf3;
+}
