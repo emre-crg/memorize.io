@@ -1,0 +1,17 @@
+.btnNotify {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(0deg 0% 100% / 10%);
+  cursor: pointer;
+  border-radius: 100px;
+  min-height: 2rem;
+  max-height: 2rem;
+  min-width: 2rem;
+  padding: 0;
+  position: relative;
+  
+  svg {
+    font-size: 1rem;
+  }
+}

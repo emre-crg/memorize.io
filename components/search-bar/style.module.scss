@@ -1,4 +1,7 @@
 .searchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   // color: #cedaf3;
   color: white;
   background-color: hsl(0deg 0% 100% / 10%);
@@ -15,7 +18,7 @@
   }
 
   svg {
-    padding-left: 4px;
+    margin: 0 8px;
     font-size: 1rem;
   }
 
