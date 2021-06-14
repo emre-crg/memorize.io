@@ -2,12 +2,12 @@ import React from 'react'
 
 import styles from './style.module.scss'
 
-function BtnHeader({ children }) {
+function BtnNav({ children }) {
   return (
-    <a className={styles.btnHeader}>
+    <a className={styles.btnNav}>
       <span>{children}</span>
     </a>
   )
 }
 
-export default BtnHeader
+export default BtnNav

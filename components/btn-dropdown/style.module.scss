@@ -1,6 +1,18 @@
+.dropdownContainer {
+  display: inline-block;
+  position: relative;
+
+  .btnDropDown:focus-within + nav {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(5px);
+  }
+}
+
+
 .btnDropDown {
-  // display: flex;
-  // align-items: center;
+  display: flex;
+  align-items: center;
   background-color: initial;
   font: inherit;
   cursor: pointer;
