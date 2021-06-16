@@ -1,14 +1,13 @@
 .dropdownContainer {
   display: inline-block;
   position: relative;
-
-  .btnDropDown:focus-within + nav {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(5px);
-  }
 }
 
+.dropdownContainer:focus-within > nav {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(5px);
+}
 
 .btnDropDown {
   display: flex;
