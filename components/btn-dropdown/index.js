@@ -28,7 +28,7 @@ function BtnDropDown_Tabs({ children, tabs, ...props }) {
         </span>
       </a>
 
-      {tabs === "tabs" ? <DropdownContainer></DropdownContainer> : <span>span</span>}
+      {tabs === "menu" ? <DropdownContainer></DropdownContainer> : <span>span</span>}
       
     </div>
   )

@@ -12,7 +12,7 @@ function ContentLeft({children}) {
       <Logo />
       <BtnNav>Giriş Sayfası</BtnNav>
       <BtnDropDown>Dosyalarınız</BtnDropDown>
-      <BtnDropDown colored tabs={"tabs"}>Oluştur</BtnDropDown>
+      <BtnDropDown colored tabs={"menu"}>Oluştur</BtnDropDown>
     </div>
   )  
 }

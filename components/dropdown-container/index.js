@@ -1,18 +1,17 @@
 import React from 'react'
+import Link from 'next/link'
 
 import styles from './style.module.scss'
 
-function DropdownContainer( {children} ) {
+function DropdownContainer_Menu( {children} ) {
   
   return (
-    <nav className={styles.dropdownTab}>
-      <ul tabIndex={1}>
-        <li>Böllüm-1</li>
-        <li>Böllüm-2</li>
-        <li>Böllüm-3</li>
-      </ul>
+    <nav className={styles.dropdownMenu}>
+        <Link href={'#'}>Çalışma Setleri</Link>
+        <Link href={'#'}>Klasör</Link>
+        <Link href={'#'}>Sınıf</Link>
     </nav>
   )
 }
 
-export default DropdownContainer
+export default DropdownContainer_Menu
