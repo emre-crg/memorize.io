@@ -26,3 +26,52 @@
     color: black;
   }
 }
+
+.dropdownUnderLine {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: 200ms all;
+  background-color: white;
+  // color: #646f90;
+  color: black;
+  border: 1px solid #d9dde8;
+  border-radius: .5rem;
+  width: max-content;
+}
+
+.dropdownUnderLine_head {
+  display: inline-flex;
+  margin: 8px 16px;
+
+  button {
+    cursor: pointer;
+    position: relative;
+    background-color: white;
+    padding: 4px 0;
+    color: #646f90;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  >button {
+    margin-right: 16px;
+  }
+
+  button + button {
+    margin: 0 16px;
+  }
+
+  button:hover {
+    color: #303545;
+  }
+
+}
+
+.dropdownUnderLine_body {
+  background-color: rebeccapurple;
+  height: 300px;
+}

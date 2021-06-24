@@ -11,7 +11,7 @@ function ContentLeft({children}) {
     <div className={styles.contentLeft}>
       <Logo />
       <BtnNav>Giriş Sayfası</BtnNav>
-      <BtnDropDown>Dosyalarınız</BtnDropDown>
+      <BtnDropDown tabs={"underline"}>Dosyalarınız</BtnDropDown>
       <BtnDropDown colored tabs={"menu"}>Oluştur</BtnDropDown>
     </div>
   )  

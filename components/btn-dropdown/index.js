@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-
 import cn from 'classnames'
+
 import ArrowBottom from '../icons/ArrowBottom'
 import DropdownContainer from '../dropdown-container'
 
@@ -28,7 +28,7 @@ function BtnDropDown_Tabs({ children, tabs, ...props }) {
         </span>
       </a>
 
-      {tabs === "menu" ? <DropdownContainer></DropdownContainer> : <span>span</span>}
+      <DropdownContainer tabs={tabs} />
       
     </div>
   )
