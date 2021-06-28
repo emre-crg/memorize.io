@@ -4,7 +4,7 @@ import cn from 'classnames'
 import styles from './style.module.scss'
 
 
-function CardDefauld({title,item, children }) {
+function CardDefauld({ children, title, item }) {
 
   return (
     <div className={cn(styles.cardDefauld)}>

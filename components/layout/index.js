@@ -11,8 +11,8 @@ function Layout({ children }) {
 
   return (
     <div className={cn(styles.layout)}>
-      <Header />
-      <Main />
+      <Header></Header>
+      <Main>{children}</Main>
     </div>
   )
 }
