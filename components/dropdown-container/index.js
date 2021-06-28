@@ -10,18 +10,18 @@ function DropdownContainer_Menu( {children} ) {
   
   return (
     <nav className={styles.dropdownMenu}>
-        <Link href={'#'}>Çalışma Setleri</Link>
+        <Link href={'/create-set'}>Çalışma Setleri</Link>
         <Link href={'#'}>Klasör</Link>
         <Link href={'#'}>Sınıf</Link>
     </nav>
   )
 }
 
-const deneme = () => {
-  return (
-    <span>Deneme</span>
-  )
-}
+// const deneme = () => {
+//   return (
+//     <span>Deneme</span>
+//   )
+// }
 
 
 
