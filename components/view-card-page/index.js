@@ -9,26 +9,35 @@ import 'swiper/components/navigation/navigation.min.css'
 
 import styles from './style.module.scss'
 
-import SwiperCore, { Pagination, Navigation } from 'swiper/core'
+import SwiperCore, { Keyboard, Pagination, Navigation } from 'swiper/core'
 
-SwiperCore.use([Pagination, Navigation])
+import ReactCardFlip from 'react-card-flip'
+
+SwiperCore.use([Keyboard, Pagination, Navigation])
 
 
-function ViewCardPage( {children, setId, ...props }) {
+function ViewCardPage( { children, setId, ...props }) {
 
-  const [card, setCard] = useState();
-  // const [url, setUrl] = useState();
+  const [card, setCard] = useState([]);
+  const [isFlipped, setIsFlipped] = useState(false);
 
 
   useEffect(async () => {
 
-    const result = await fetch(`http://localhost:4001/card/setId/${setId}`)
+    let url = window.location.href.split('/');
+    url = url[url.length-1]
+    console.log("url", url)
+
+    const result = await fetch(`http://localhost:4001/card/setId/${url}`)
     const data = await result.json()
 
+    console.log(data)
     setCard(data);
-    console.log(result)
-  });
+  }, []);
 
+  const handleClick = () => {
+    setIsFlipped(!isFlipped);
+  }
 
 
   return (
@@ -37,29 +46,33 @@ function ViewCardPage( {children, setId, ...props }) {
     { card ? 
 
     <Swiper
-    pagination={{
-      type: "fraction"
-    }}
-    navigation={true}
-    className="mySwiper"
+      keyboard={{
+        enabled: true
+      }}
+      pagination={{
+        type: "fraction"
+      }}
+      navigation={true}
+      className="mySwiper"
   >
-    { card.map(element => {
-        return <SwiperSlide>{element.term}</SwiperSlide>;
-    }) }
+      { card.map(element => {
+          return <SwiperSlide>  
+                  <ReactCardFlip isFlipped={isFlipped} flipDirection={'vertical'} >
+                      <div className={styles.flipTerm} >
+                        <p>{element.term}</p>
+                        <button onClick={handleClick}>Arka Yüzünü Çevir</button>
+                      </div>
 
-{/* 
-    <SwiperSlide>Slide 1</SwiperSlide>
-    <SwiperSlide>Slide 2</SwiperSlide>
-    <SwiperSlide>Slide 3</SwiperSlide>
-    <SwiperSlide>Slide 4</SwiperSlide>
-    <SwiperSlide>Slide 5</SwiperSlide>
-    <SwiperSlide>Slide 6</SwiperSlide>
-    <SwiperSlide>Slide 7</SwiperSlide>
-    <SwiperSlide>Slide 8</SwiperSlide>
-    <SwiperSlide>Slide 9</SwiperSlide> */}
+                      <div className={styles.flipDefinition} >
+                        <p>{element.definition}</p>
+                        <button onClick={handleClick}>Arka Yüzünü Çevir</button>
+                      </div>
+
+                  </ReactCardFlip>               
+              </SwiperSlide>;
+      }) }
     
-    </Swiper>          
-    
+    </Swiper>   
     :     
     <p>Loading...</p> }
   </div>

@@ -1,4 +1,55 @@
 .sliderContainer {
   width: 100%;
   height: 450px;
+  padding: 0 200px;
+  margin: 24px;
+}
+
+.flipTerm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  background-color: purple;
+  color: aliceblue;
+  width: 200px;
+  height: 350px;
+  border-radius: 5px;
+
+  p {
+    font-size: xx-large;
+    font-weight: 600;
+  }
+
+  button {
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+.flipDefinition {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  background-color: rebeccapurple;
+  color: aliceblue;
+  width: 200px;
+  height: 350px;
+  border-radius: 5px;
+
+  p {
+    font-size: xx-large;
+    font-weight: 600;
+  }
+
+  button {
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+  }
 }
