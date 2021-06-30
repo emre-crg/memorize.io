@@ -19,12 +19,6 @@ function DropdownContainer_Menu( {children} ) {
 
 
 function DropdownContainer_UnderlineNavbar( {children} ) {
-
-const Deneme = () => {
-  return (
-    <span>Deneme</span>
-  )
-}
   
   const GetWorkingSets = () => {
     useEffect(() => {
