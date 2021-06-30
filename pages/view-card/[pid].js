@@ -10,8 +10,6 @@ function ViewCard( {children}) {
   const router = useRouter()
   const { pid } = router.query
 
-  console.log(router);
-
   return (
     <Layout>
       <ViewCardPage setId={pid}></ViewCardPage>
