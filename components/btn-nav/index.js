@@ -5,7 +5,7 @@ import styles from './style.module.scss'
 
 function BtnNav({ children }) {
   return (
-    <Link href='#'>
+    <Link href='/'>
       <a className={styles.btnNav}>
         <span>{children}</span>
       </a>
