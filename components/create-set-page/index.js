@@ -44,6 +44,9 @@ function CreateSetPage({ children }) {
 
   const [selectInput, setSelectInput] = useState(null)
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
 
   const onInputChange = (event) => {
     console.log('onChance Çaıştı', event)
@@ -77,6 +80,8 @@ function CreateSetPage({ children }) {
     })
 
     setTable({ title: '', statement: '', author: '' })
+
+    refreshPage()
   }
 
   //Card bilgilerini Post eder
