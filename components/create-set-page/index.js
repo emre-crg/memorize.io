@@ -37,7 +37,7 @@ function CreateSetPage({ children }) {
   const [error, setError] = useState('')
 
   const [cardTable, setCardTable] = useState({
-    sets_id: '3',
+    sets_id: '',
     term: '',
     definition: ''
   })
@@ -56,6 +56,7 @@ function CreateSetPage({ children }) {
     setCardTable({ ...cardTable, [event.target.name]: event.target.value })
   }
 
+  //Set bilgilerini Post eder
   const onFormSetsSubmit = (event) => {
     event.preventDefault()
     setError('')
@@ -75,8 +76,11 @@ function CreateSetPage({ children }) {
         ? setError('Zorunlu alanlar: "Başlık", "Açıklama" veya "Author" eksik')
         : setError('')
     })
+
+    setTable({ title: '', statement: '', author: '' })
   }
 
+  //Card bilgilerini Post eder
   const onFormCardSubmit = (event) => {
     event.preventDefault()
     setErrorCardTable('')
@@ -100,6 +104,8 @@ function CreateSetPage({ children }) {
           )
         : setErrorCardTable('')
     })
+
+    setCardTable({ sets_id: '', term: '', definition: '' })
   }
 
   const getSetId = () => {
