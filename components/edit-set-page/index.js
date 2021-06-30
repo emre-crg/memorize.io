@@ -1,13 +1,36 @@
 import React, { useState, useEffect } from 'react'
 
-import { Form, Message } from 'semantic-ui-react'
+import { Form, Item, Message, Table } from 'semantic-ui-react'
 
 import styles from './style.module.scss'
 
-
-function EditSetPage( {children} ) {
-
+function EditSetPage({ children }) {
   const [table, setTable] = useState({ title: '', statement: '', author: '' })
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    // Windows nesnesinden url ucu alınıyor...
+    let url = window.location.href.split('/')
+    url = url[url.length - 1]
+
+    //Çalışma setlerini getitiriyor...
+    fetch(`http://localhost:4001/sets/${url}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("dATA", data)
+        return Object.values(data)
+      }).then(arr => {
+        setData(arr)
+        console.log("arr", arr)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, [])
+
+  function refreshPage() {
+    window.location.reload(false);
+  }
 
   const onInputChange = (event) => {
     console.log('onChance Çaıştı', event)
@@ -19,16 +42,15 @@ function EditSetPage( {children} ) {
     event.preventDefault()
 
     // Windows nesnesinden url ucu alınıyor...
-    let url = window.location.href.split('/');
-    url = url[url.length-1]
+    let url = window.location.href.split('/')
+    url = url[url.length - 1]
 
     //Fetch body değişkeni düzenleniyor...
     let BODY = {}
-    
+
     table.title && (BODY.title = table.title)
     table.statement && (BODY.statement = table.statement)
     table.author && (BODY.creator_name = table.author)
-    
 
     const requestOptions = {
       method: 'PATCH',
@@ -36,16 +58,17 @@ function EditSetPage( {children} ) {
       body: JSON.stringify(BODY)
     }
 
-    fetch(`http://localhost:4001/sets/${url}`, requestOptions).then((res) => {
-      console.log(res);
+    fetch(`http://localhost:4001/sets/${url}`, requestOptions)
+    .then((res) => {
+      console.log(res)
     })
 
     setTable({ title: '', statement: '', author: '' })
+    refreshPage()
   }
-  
-  
+
   return (
-    <div className={styles.Page}>      
+    <div className={styles.Page}>
       <div className={styles.Header}>
         <div className={styles.HeaderTitle}>
           <span>Çalışma Setini Düzenle</span>
@@ -54,8 +77,31 @@ function EditSetPage( {children} ) {
           <button onClick={onFormSetsSubmit}>Düzenle</button>
         </div>
       </div>
-      
 
+      <Table celled>
+        <Table.Header>
+          <Table.Row>
+            <Table.HeaderCell>Id</Table.HeaderCell>
+            <Table.HeaderCell>Başlık</Table.HeaderCell>
+            <Table.HeaderCell>Oluşturan Kişi</Table.HeaderCell>
+            <Table.HeaderCell>Açıklama</Table.HeaderCell>
+          </Table.Row>
+        </Table.Header>
+
+        <Table.Body>
+          <Table.Row>
+            {
+              data.map(item => (
+                <Table.Cell>{item}</Table.Cell>
+              ))
+            }
+            
+            {/* <Table.Cell>lorem</Table.Cell>
+            <Table.Cell>lorem</Table.Cell> */}
+          </Table.Row>
+        </Table.Body>
+      </Table>
+      
       <Form className={styles.Form}>
         <Form.Field>
           <label>Başlık</label>
@@ -85,8 +131,6 @@ function EditSetPage( {children} ) {
           />
         </Form.Field>
       </Form>
-
-
     </div>
   )
 }
