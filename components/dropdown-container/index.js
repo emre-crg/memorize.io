@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import Link from 'next/link'
 
@@ -17,20 +17,48 @@ function DropdownContainer_Menu( {children} ) {
   )
 }
 
-// const deneme = () => {
-//   return (
-//     <span>Deneme</span>
-//   )
-// }
-
-
 
 function DropdownContainer_UnderlineNavbar( {children} ) {
 
+const Deneme = () => {
+  return (
+    <span>Deneme</span>
+  )
+}
+  
+  const GetWorkingSets = () => {
+    useEffect(() => {
+      //Çalışma setlerini getitiriyor...
+  
+      fetch('http://localhost:4001/sets')
+        .then((res) => res.json())
+        .then((item) => {
+          setPost(item)
+        })
+    }, [])
+
+
+    const [post, setPost] = useState([]);
+
+
+    return(
+      post.map(item => (
+        <div className={styles.workingSets}>
+        <a href={`/view-card/${item.id}`}>
+          <h1>{item.title}</h1>
+          <span>{`@${item.creator_name}`}</span>
+        </a>
+        </div>
+      ))
+    )
+
+  }
+
+  /* Handle Metodları ... */
   const handleClick = () => {
     console.log('handleClick Çalıştı...')
     ReactDOM.render(
-      <span>Çalışma</span>,
+      <GetWorkingSets />,
       document.querySelector('.dropdown-body')
      );
   }
@@ -65,6 +93,7 @@ function DropdownContainer_UnderlineNavbar( {children} ) {
         <button onClick={handleClick2}>Açıklamalar</button>
         <button onClick={handleClick3}>Klasörler</button>
         <button onClick={handleClick4}>Sınıflar</button>
+        
       </div>
 
       <div className={cn(styles.dropdownUnderLine_body, 'dropdown-body')}>

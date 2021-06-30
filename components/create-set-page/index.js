@@ -27,7 +27,6 @@ function CreateSetPage({ children }) {
         return arr
       })
       .then((item) => {
-        console.log('item', item)
         setSelectInput(item)
       })
   }, [])
