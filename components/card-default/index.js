@@ -5,6 +5,8 @@ import { Button, Card, Image } from 'semantic-ui-react'
 
 import Link from 'next/link'
 
+import api from '../../api'
+
 import styles from './style.module.scss'
 
 function CardDefauld({ children, title, item, link, id }) {
@@ -20,7 +22,7 @@ function CardDefauld({ children, title, item, link, id }) {
       headers: { 'Content-Type': 'application/json' },
     }
 
-    fetch(`http://localhost:4001/sets/${id}`, requestOptions)
+    fetch(`${api.hostname}/sets/${id}`, requestOptions)
     .then((res) => {
       console.log(res)
     })

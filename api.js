@@ -1,7 +1,5 @@
-import axios from "axios";
+const host = require("./api/host");
 
-export function api() {
-  return axios.create({
-    baseURL: ""
-  })
-}
+const environment = process.env.HOST || "development"
+
+export default host[environment]

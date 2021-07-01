@@ -4,6 +4,8 @@ import Link from 'next/link'
 
 import cn from 'classnames'
 
+import api from '../../api'
+
 import styles from './style.module.scss'
 
 function DropdownContainer_Menu( {children} ) {
@@ -24,7 +26,7 @@ function DropdownContainer_UnderlineNavbar( {children} ) {
     useEffect(() => {
       //Çalışma setlerini getitiriyor...
   
-      fetch('http://localhost:4001/sets')
+      fetch(`${api.hostname}/sets`)
         .then((res) => res.json())
         .then((item) => {
           setPost(item)

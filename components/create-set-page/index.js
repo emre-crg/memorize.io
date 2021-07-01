@@ -6,12 +6,14 @@ import { Form, Message } from 'semantic-ui-react'
 import styles from './style.module.scss'
 import TermContent from './term-row'
 
+import api from '../../api'
+
 function CreateSetPage({ children }) {
   
   useEffect(() => {
     //Çalışma setlerini getitiriyor...
 
-    fetch('http://localhost:4001/sets')
+    fetch(`${api.hostname}/sets`)
       .then((res) => res.json())
       .then((data) => {
         let arr = data.map((item) => {
@@ -73,7 +75,7 @@ function CreateSetPage({ children }) {
       })
     }
 
-    fetch('http://localhost:4001/sets', requestOptions).then((res) => {
+    fetch(`${api.hostname}/sets`, requestOptions).then((res) => {
       res.status != 201
         ? setError('Zorunlu alanlar: "Başlık", "Açıklama" veya "Author" eksik')
         : setError('')
@@ -99,7 +101,7 @@ function CreateSetPage({ children }) {
     }
 
     fetch(
-      `http://localhost:4001/card/${cardTable.sets_id}`,
+      `${api.hostname}/card/${cardTable.sets_id}`,
       requestOptions
     ).then((res) => {
       res.status == 401

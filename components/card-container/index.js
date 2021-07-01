@@ -5,13 +5,14 @@ import styles from './style.module.scss'
 
 import CardDefauld from '../card-default'
 
+import api from '../../api'
 
 function CardContainer( { children, title } ) {
   const [post, setPost] = useState([]);
 
   useEffect(() => {
 
-    fetch('http://localhost:4001/sets')
+    fetch(`${api.hostname}/sets`)
     .then(res => res.json())
     .then(data => {
       setPost(data)

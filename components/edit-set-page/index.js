@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 
 import { Form, Item, Message, Table } from 'semantic-ui-react'
 
+import api from '../../api'
+
 import styles from './style.module.scss'
 
 function EditSetPage({ children }) {
@@ -14,7 +16,7 @@ function EditSetPage({ children }) {
     url = url[url.length - 1]
 
     //Çalışma setlerini getitiriyor...
-    fetch(`http://localhost:4001/sets/${url}`)
+    fetch(`${api.hostname}/sets/${url}`)
       .then((res) => res.json())
       .then((data) => {
         console.log("dATA", data)
@@ -58,7 +60,7 @@ function EditSetPage({ children }) {
       body: JSON.stringify(BODY)
     }
 
-    fetch(`http://localhost:4001/sets/${url}`, requestOptions)
+    fetch(`${api.hostname}/sets/${url}`, requestOptions)
     .then((res) => {
       console.log(res)
     })

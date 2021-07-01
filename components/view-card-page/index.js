@@ -11,6 +11,8 @@ import styles from './style.module.scss'
 
 import SwiperCore, { Keyboard, Pagination, Navigation } from 'swiper/core'
 
+import api from '../../api'
+
 import ReactCardFlip from 'react-card-flip'
 
 SwiperCore.use([Keyboard, Pagination, Navigation])
@@ -28,7 +30,7 @@ function ViewCardPage( { children, setId, ...props }) {
     url = url[url.length-1]
     console.log("url", url)
 
-    const result = await fetch(`http://localhost:4001/card/setId/${url}`)
+    const result = await fetch(`${api.hostname}/card/setId/${url}`)
     const data = await result.json()
 
     console.log(data)
