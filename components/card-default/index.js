@@ -22,7 +22,7 @@ function CardDefauld({ children, title, item, link, id }) {
       headers: { 'Content-Type': 'application/json' },
     }
 
-    fetch(`https://memorize-api.herokuapp.com/sets/${id}`, requestOptions)
+    fetch(`${api.hostname}/sets/${id}`, requestOptions)
     .then((res) => {
       console.log(res)
     })

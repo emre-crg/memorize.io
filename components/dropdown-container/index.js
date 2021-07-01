@@ -26,7 +26,7 @@ function DropdownContainer_UnderlineNavbar( {children} ) {
     useEffect(() => {
       //Çalışma setlerini getitiriyor...
   
-      fetch(`https://memorize-api.herokuapp.com/sets`)
+      fetch(`${api.hostname}/sets`)
         .then((res) => res.json())
         .then((item) => {
           setPost(item)

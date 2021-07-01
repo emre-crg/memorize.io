@@ -12,7 +12,7 @@ function CardContainer( { children, title } ) {
 
   useEffect(() => {
 
-    fetch(`https://memorize-api.herokuapp.com/sets`)
+    fetch(`${api.hostname}/sets`)
     .then(res => res.json())
     .then(data => {
       setPost(data)
