@@ -28,7 +28,7 @@ function CardContainer( { children, title } ) {
 
         { 
           post.map(item => (
-            <CardDefauld  title={item.title} link={`view-card/${item.id}`}></CardDefauld>
+            <CardDefauld  title={item.title} link={`view-card/${item.id}`} id={item.id} ></CardDefauld>
           ))   
         }
       </section>
