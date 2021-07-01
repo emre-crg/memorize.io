@@ -10,7 +10,7 @@ function ContentRight({children}) {
   return (
     <div className={styles.contentRight}>
       <SearchBar>Ara</SearchBar>
-      <BtnNotification></BtnNotification>
+      <BtnNotification tabs={"notify"} />
       <Avatar url={"https://avatars.githubusercontent.com/u/49869820?v=4"} />
     </div>
   )  

@@ -100,6 +100,21 @@ function DropdownContainer_UnderlineNavbar( {children} ) {
 
 }
 
+
+function DropdownContainer_Notify( {children} ) {
+  
+  return (
+    <nav className={styles.dropdownMenuNotify}>
+        <Link href={'#'}>Lorem ipsum sid amed</Link>
+        <Link href={'#'}>Lorem ipsum sid amed</Link>
+        <Link href={'#'}>Lorem ipsum sid amed</Link>
+        <Link href={'#'}>Lorem ipsum sid amed</Link>
+        <Link href={'#'}>Lorem ipsum sid amed</Link>
+        <Link href={'#'}>Lorem ipsum sid amed</Link>
+    </nav>
+  )
+}
+
 function Empty() {
   return(
     <></>
@@ -110,6 +125,7 @@ function Empty() {
 function DropdownContainer( {children, tabs, ...props} ) {
   const Comp = (tabs === 'menu') ? DropdownContainer_Menu 
               : (tabs === 'underline') ? DropdownContainer_UnderlineNavbar 
+              : (tabs === 'notify' ) ? DropdownContainer_Notify
               : Empty
   
   return (

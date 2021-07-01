@@ -1,7 +1,7 @@
 .dropdownMenu {
   position: absolute;
   top: 100%;
-  left: 0;
+  left: -10px;
   background-color: #fff;
   color: #646f90;
   border: 1px solid #d9dde8;
@@ -19,6 +19,35 @@
   a {
     color: #939bb4;
     padding: .5rem 72px .5rem 24px;
+  }
+
+  a:hover {
+    background-color: #edeef2;
+    color: black;
+  }
+}
+
+.dropdownMenuNotify {
+  position: absolute;
+  top: 100%;
+  left: -70px;
+  background-color: #fff;
+  color: #646f90;
+  border: 1px solid #d9dde8;
+  border-radius: .5rem;
+  width: max-content;
+  cursor: pointer;
+  z-index: 3;
+  opacity: 0;
+  visibility: hidden;
+  transition: 200ms all;
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+
+  a {
+    color: #939bb4;
+    padding: .5rem;
   }
 
   a:hover {
