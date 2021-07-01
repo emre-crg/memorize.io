@@ -13,7 +13,7 @@ function CreateSetPage({ children }) {
   useEffect(() => {
     //Çalışma setlerini getitiriyor...
 
-    fetch(`${api.hostname}/sets`)
+    fetch(`https://memorize-api.herokuapp.com/sets`)
       .then((res) => res.json())
       .then((data) => {
         let arr = data.map((item) => {
@@ -47,7 +47,7 @@ function CreateSetPage({ children }) {
   const [selectInput, setSelectInput] = useState(null)
 
   function refreshPage() {
-    window.location.reload(false);
+    setTimeout(function() { window.location.reload(false); }, 1000);
   }
 
   const onInputChange = (event) => {
@@ -75,7 +75,9 @@ function CreateSetPage({ children }) {
       })
     }
 
-    fetch(`${api.hostname}/sets`, requestOptions).then((res) => {
+    console.log("reqOptions", requestOptions);
+
+    fetch('https://memorize-api.herokuapp.com/sets', requestOptions).then((res) => {
       res.status != 201
         ? setError('Zorunlu alanlar: "Başlık", "Açıklama" veya "Author" eksik')
         : setError('')
@@ -101,7 +103,7 @@ function CreateSetPage({ children }) {
     }
 
     fetch(
-      `${api.hostname}/card/${cardTable.sets_id}`,
+      `https://memorize-api.herokuapp.com/card/${cardTable.sets_id}`,
       requestOptions
     ).then((res) => {
       res.status == 401

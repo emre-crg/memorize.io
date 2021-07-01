@@ -16,7 +16,7 @@ function EditSetPage({ children }) {
     url = url[url.length - 1]
 
     //Çalışma setlerini getitiriyor...
-    fetch(`${api.hostname}/sets/${url}`)
+    fetch(`https://memorize-api.herokuapp.com/sets/${url}`)
       .then((res) => res.json())
       .then((data) => {
         console.log("dATA", data)
@@ -31,7 +31,7 @@ function EditSetPage({ children }) {
   }, [])
 
   function refreshPage() {
-    window.location.reload(false);
+    setTimeout(function() { window.location.reload(false); }, 1000);
   }
 
   const onInputChange = (event) => {
@@ -60,7 +60,7 @@ function EditSetPage({ children }) {
       body: JSON.stringify(BODY)
     }
 
-    fetch(`${api.hostname}/sets/${url}`, requestOptions)
+    fetch(`https://memorize-api.herokuapp.com/sets/${url}`, requestOptions)
     .then((res) => {
       console.log(res)
     })

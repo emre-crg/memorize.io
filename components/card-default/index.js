@@ -12,7 +12,7 @@ import styles from './style.module.scss'
 function CardDefauld({ children, title, item, link, id }) {
   
   function refreshPage() {
-    window.location.reload(false);
+    setTimeout(function() { window.location.reload(false); }, 1000);
   }
 
   const CardDelete = () => {
@@ -22,7 +22,7 @@ function CardDefauld({ children, title, item, link, id }) {
       headers: { 'Content-Type': 'application/json' },
     }
 
-    fetch(`${api.hostname}/sets/${id}`, requestOptions)
+    fetch(`https://memorize-api.herokuapp.com/sets/${id}`, requestOptions)
     .then((res) => {
       console.log(res)
     })

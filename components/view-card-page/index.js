@@ -30,7 +30,7 @@ function ViewCardPage( { children, setId, ...props }) {
     url = url[url.length-1]
     console.log("url", url)
 
-    const result = await fetch(`${api.hostname}/card/setId/${url}`)
+    const result = await fetch(`https://memorize-api.herokuapp.com/card/setId/${url}`)
     const data = await result.json()
 
     console.log(data)

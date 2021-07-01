@@ -1,6 +1,6 @@
 module.exports = {
   development: {
-    hostname: "http://localhost:4001"
+    hostname: "https://memorize-api.herokuapp.com"
   },
   production: {
     hostname: "https://memorize-api.herokuapp.com"
