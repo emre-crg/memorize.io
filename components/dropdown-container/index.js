@@ -115,6 +115,20 @@ function DropdownContainer_Notify( {children} ) {
   )
 }
 
+function DropdownContainer_Avatar( {children} ) {
+  
+  return (
+    <nav className={styles.dropdownMenuAvatar}>
+        <Link href={'#'}>Profil</Link>
+        <Link href={'#'}>Profil Düzenle</Link>
+        <Link href={'#'}>Sorular</Link>
+        <Link href={'#'}>Ayarlar</Link>
+        <Link href={'#'}>Bildirimler</Link>
+        <Link href={'#'}>Çıkış</Link>
+    </nav>
+  )
+}
+
 function Empty() {
   return(
     <></>
@@ -126,6 +140,7 @@ function DropdownContainer( {children, tabs, ...props} ) {
   const Comp = (tabs === 'menu') ? DropdownContainer_Menu 
               : (tabs === 'underline') ? DropdownContainer_UnderlineNavbar 
               : (tabs === 'notify' ) ? DropdownContainer_Notify
+              : (tabs === 'avatar' ) ? DropdownContainer_Avatar
               : Empty
   
   return (

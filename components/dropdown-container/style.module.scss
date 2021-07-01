@@ -30,6 +30,35 @@
 .dropdownMenuNotify {
   position: absolute;
   top: 100%;
+  left: -120px;
+  background-color: #fff;
+  color: #646f90;
+  border: 1px solid #d9dde8;
+  border-radius: .5rem;
+  width: max-content;
+  cursor: pointer;
+  z-index: 3;
+  opacity: 0;
+  visibility: hidden;
+  transition: 200ms all;
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+
+  a {
+    color: #939bb4;
+    padding: .5rem 2rem;
+  }
+
+  a:hover {
+    background-color: #edeef2;
+    color: black;
+  }
+}
+
+.dropdownMenuAvatar {
+  position: absolute;
+  top: 100%;
   left: -70px;
   background-color: #fff;
   color: #646f90;
@@ -47,12 +76,16 @@
 
   a {
     color: #939bb4;
-    padding: .5rem;
+    padding: .5rem .8rem;
   }
 
   a:hover {
     background-color: #edeef2;
     color: black;
+  }
+
+  :last-child {
+    color: red;
   }
 }
 
