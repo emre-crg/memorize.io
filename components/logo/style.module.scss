@@ -8,6 +8,11 @@
   cursor: pointer;
   color: white;
 
+  svg {
+    width: max-content;
+    height: max-content;
+  }
+
 }
 
 .logo:hover {

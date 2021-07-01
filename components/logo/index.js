@@ -4,7 +4,7 @@ import cn from 'classnames'
 
 import styles from './style.module.scss'
 
-import LogoIcon from '../icons/Logo'
+import LogoIcon from '../icons/MemorizeIo'
 
 function Logo() {
   return (
