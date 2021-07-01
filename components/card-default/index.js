@@ -9,8 +9,22 @@ import styles from './style.module.scss'
 
 function CardDefauld({ children, title, item, link, id }) {
   
-  const clickHanle = (e) => {
-    console.log(e)
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
+  const CardDelete = () => {
+
+    const requestOptions = {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+    }
+
+    fetch(`http://localhost:4001/sets/${id}`, requestOptions)
+    .then((res) => {
+      console.log(res)
+    })
+    refreshPage()
   }
   
   return (
@@ -32,7 +46,7 @@ function CardDefauld({ children, title, item, link, id }) {
             </Link>
 
             <Link href={'/'}>
-              <Button onClick={clickHanle} basic color="red">Sil</Button>
+              <Button onClick={CardDelete} basic color="red">Sil</Button>
             </Link>
 
           </div>
