@@ -13,7 +13,7 @@ function DropdownContainer_Menu( {children} ) {
   return (
     <nav className={styles.dropdownMenu}>
         <Link href={'/create-set'}>Çalışma Setleri</Link>
-        <Link href={'#'}>Klasör</Link>
+        <Link href={'/create-folder'}>Klasör</Link>
         <Link href={'#'}>Sınıf</Link>
     </nav>
   )
