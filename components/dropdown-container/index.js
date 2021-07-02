@@ -14,7 +14,7 @@ function DropdownContainer_Menu( {children} ) {
     <nav className={styles.dropdownMenu}>
         <Link href={'/create-set'}>Çalışma Setleri</Link>
         <Link href={'/create-folder'}>Klasör</Link>
-        <Link href={'#'}>Sınıf</Link>
+        <Link href={'/create-class'}>Sınıf</Link>
     </nav>
   )
 }
@@ -93,7 +93,7 @@ function DropdownContainer_UnderlineNavbar( {children} ) {
       </div>
 
       <div className={cn(styles.dropdownUnderLine_body, 'dropdown-body')}>
-        <GetWorkingSets />,
+        <GetWorkingSets />
       </div>
     </nav>
   )

@@ -1,0 +1,47 @@
+.CreateSetPage {
+  padding: 0 72px;
+}
+
+.CreateSetHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+
+}
+
+.CreateSetHeaderTitle {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.CreateSetHeaderButton {
+
+  
+  button {
+    background-color: #3ccfcf;
+    color: white;
+    appearance: none;
+    border: none;
+    border-radius: .25rem;
+    cursor: pointer;
+    display: inline-block;
+    font: inherit;
+    max-width: 100%;
+    padding: .75rem 1.5rem;
+    font-weight: 600;
+    font-size: .875rem;
+    line-height: 1.285714285714286;
+    transition: all .12s cubic-bezier(.47,0,.745,.715);
+    width: auto;
+  }
+
+  button:hover {
+    background-color: #28a7a7;
+  }
+}
+
+.Form {
+  margin-bottom: 80px;
+}
